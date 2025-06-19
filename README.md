@@ -41,7 +41,7 @@ pip install flask phe
 ```bash
 python app.py
 ```
-
+DB and pickle files will auto-generated when running the program
 ---
 
 ## 👱🏻‍♂️ Made by
