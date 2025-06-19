@@ -12,11 +12,11 @@ Built with:
 
 ## 📌 Features
 
-- 🔐 **Homomorphic Encryption**: Donations are encrypted on the client side before storage.
-- 🧮 **Aggregate Computation**: Server decrypts only the **total donation** (for demonstration purpose), not individual values.
-- 🧑‍💼 **Admin Dashboard**: Displays total donations and encrypted entries per donor.
-- 🧾 **Multiple Donors**: Users can submit multiple donations under different names.
-- 💾 **SQLite Database**: Lightweight, serverless data storage.
+- **Homomorphic Encryption**: Donations are encrypted on the client side before storage.
+- **Aggregate Computation**: Server decrypts only the **total donation** (for demonstration purpose), not individual values.
+- **Admin Dashboard**: Displays total donations and encrypted entries per donor.
+- **Multiple Donors**: Users can submit multiple donations under different names.
+- **SQLite Database**: Lightweight, serverless data storage.
 
 ---
 
