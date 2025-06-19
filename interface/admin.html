@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Total Donations</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Admin Dashboard</h1>
+    
+  <div class="stats">
+    <div class="donation-total">
+      <h2>{{ total_enc_display }}...</h2>
+    </div>
+    <p>Total Donations Received <span class="encrypted-label">[encrypted]</span></p>
+  </div>
+    
+    <div class="donor-list">
+      <h3>Recent Donors</h3>
+      {% if donors %}
+        <div class="donors-container">
+          {% for donor in donors %}
+            <div class="donor-item">
+              <span class="donor-name">{{ donor.donor_name }}</span>
+              <span class="donor-amount">(encrypted)</span>
+              <div style="clear: both; font-size: 0.9em; color: #666; margin-top: 5px;">
+                Donation ID: #{{ loop.index }}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="admin-list">
+          <li style="text-align: center; color: #666; font-style: italic;">
+            No donations yet. Be the first to make a difference!
+          </li>
+        </div>
+      {% endif %}
+    </div>
+    
+    <div class="nav-buttons">
+      <a href="/" class="nav-btn">← Back to Donate</a>
+      <button class="nav-btn" onclick="window.location.reload()">Refresh Data</button>
+      <div class="decrypted-button-container">
+        <button id="show-decrypted" class="nav-btn">Show Decrypted Total (For Demo Only)</button>
+      </div>
+    </div>
+
+    <div id="decrypted-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <p><strong>Decrypted Total Donation (Rp):</strong> <span id="decrypted-value">Loading...</span></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+</body>
+</html>
